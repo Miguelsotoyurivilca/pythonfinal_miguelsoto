@@ -1,0 +1,20 @@
+{% extends 'app_proyecto/base.html' %}
+
+{% block title %}
+La Casa del Codigo | {{estudiante.nombre}} {{estudiante.apellido}}
+{% endblock %}
+
+
+{% block content %}
+<div class="d-flex flex-column align-items-center gap-3 text-center my-4">
+    
+    <div class="card" style="width: 18rem;">
+        <img src="https://fakeimg.pl/600x400/9c9c9c/ee0979" class="card-img-top" alt="Persona">
+        <div class="card-body">
+          <h5 class="card-title">{{estudiante.nombre}} {{estudiante.apellido}}</h5>
+          <p class="card-text">{{estudiante.email}}</p>
+        </div>
+    </div>
+    <a class="btn btn-primary" href="{% url 'students' %}">Volver</a>
+</div>
+{% endblock %}

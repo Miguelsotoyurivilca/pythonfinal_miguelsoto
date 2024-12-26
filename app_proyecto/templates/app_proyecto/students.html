@@ -1,0 +1,93 @@
+{% extends 'app_proyecto/base.html' %}
+{% load static %}
+
+{% block title %}
+La Casa del Codigo | Inicio
+{% endblock %}
+
+{% block content %}
+
+<!-- contact section -->
+
+<section class="contact_section ">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6 px-0">
+        <div class="img-box">
+          <img src="{% static 'app_proyecto/images/contact-img2.png' %}" alt="">
+        </div>
+      </div>
+      <div class="col-lg-5 col-md-6">
+        <div class="form_container pr-0 pr-lg-5 mr-0 mr-lg-2">
+          <div class="heading_container">
+            <h2>
+              Students
+            </h2>
+          </div>
+
+
+<!-- Formulario de búsqueda -->
+<h1 class="text-center mt-4"></h1>
+<p class="text-center"></p>
+
+<h2 class="text-center"></h2>
+
+<div class="d-flex flex-column align-items-center mb-2 px-0">
+
+  <form class="d-flex" action="" method="GET">
+    <input class="form-control me-2" type="search" name="q" placeholder="Buscar..." aria-label="Search" required>
+    <button class="btn btn-outline-secondary" type="submit">Buscar</button>
+   
+  </form>
+</div>
+
+
+<div class="container">
+
+    <table class="table">
+        <thead>
+          <tr class="table-danger">
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">Correo electrónico</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for estudiante in estudiantes %}
+          <tr class="table-success">
+              <td>{{ estudiante.nombre }}</td>
+              <td>{{ estudiante.apellido }}</td>
+              <td>{{ estudiante.email }}</td>
+
+            {% if user.is_superuser %}
+                <td class="d-flex justify-content-evenly">
+                  <a class="btn btn-danger" href="{% url 'students-editar' estudiante.id %}">Eliminar</a>
+                  <a class="btn btn-warning" href="{% url 'students-editar' estudiante.id %}">Editar</a>
+                  <a class="btn btn-info" href="{% url 'students-detalle' estudiante.id %}">Perfil</a>
+                </td>
+            {% else %}
+                <td>No tiene los permisos suficientes.</td>
+            {% endif %}
+            {% endfor %}
+          </tr>
+        </tbody>
+    </table>
+
+</div>
+
+        <div class="container my-4">
+         <a class="btn btn-primary" href="{% url 'students-formulario' %}">Agregar Estudiante</a>
+        </div>
+          
+<!-- Fin de formulario -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- end contact section -->
+
+
+{% endblock %}

@@ -117,8 +117,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGIN_URL = 'login'  # Usa el nombre de la URL que definiste para el login
+LOGIN_REDIRECT_URL = 'inicio'  # Redirige aquí después del login exitoso
+LOGOUT_REDIRECT_URL = 'inicio'  # Redirige aquí después del logout

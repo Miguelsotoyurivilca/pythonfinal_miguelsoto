@@ -1,0 +1,401 @@
+{% extends 'app_proyecto/base.html' %}
+{% load static %}
+
+{% block title %}
+La Casa del Codigo | Inicio
+{% endblock %}
+
+{% block content %}
+
+<!-- slider section -->
+<section class=" slider_section position-relative">
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="container">
+          <div class="col-lg-10 col-md-11 mx-auto">
+            <div class="detail-box">
+              <div>
+                <h3>
+                  Método
+                </h3>
+                <h2>
+                  Pulso
+                </h2>
+                <h1>
+                  Poderoso
+                </h1>
+                <p>
+                  Un entrenamiento de alta intensidad que combina ejercicios cardiovasculares con fuerza funcional, diseñado para potenciar tu energía y resistencia al máximo.
+                </p>
+                <div class="">
+                 <a href="{% url 'about' %}">
+                    Conoce más
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="container">
+          <div class="col-lg-10 col-md-11 mx-auto">
+            <div class="detail-box">
+              <div>
+                <h3>
+                  Laboratorio
+                </h3>
+                <h2>
+                  Esculpe
+                </h2>
+                <h1>
+                  Abs
+                </h1>
+                <p>
+                  Un programa especializado en fortalecer y definir tu zona media, con ejercicios dinámicos que mejoran tu postura y estabilidad.
+                </p>
+                <div class="">
+                  <a href="{% url 'about' %}">
+                    Conoce más
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="container">
+          <div class="col-lg-10 col-md-11 mx-auto">
+            <div class="detail-box">
+              <div>
+                <h3>
+                  Estudio
+                </h3>
+                <h2>
+                  Flujo
+                </h2>
+                <h1>
+                  Dinámico
+                </h1>
+                <p>
+                  Sesiones que mezclan movimientos fluidos de yoga, pilates y funcional, ideales para aumentar flexibilidad, fuerza y equilibrio.
+                </p>
+                <div class="">
+                  <a href="{% url 'about' %}">
+                    Conoce más
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="container">
+          <div class="col-lg-10 col-md-11 mx-auto">
+            <div class="detail-box">
+              <div>
+                <h3>
+                  Academia
+                </h3>
+                <h2>
+                  Resistencia
+                </h2>
+                <h1>
+                  Extrema
+                </h1>
+                <p>
+                  Entrenamientos progresivos enfocados en mejorar tu capacidad cardiovascular y fuerza física, llevándote a superar tus límites día a día.
+                </p>
+                <div class="">
+                  <a href="{% url 'about' %}">
+                    Conoce más
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="container">
+          <div class="col-lg-10 col-md-11 mx-auto">
+            <div class="detail-box">
+              <div>
+                <h3>
+                  Fusión
+                </h3>
+                <h2>
+                  Zona
+                </h2>
+                <h1>
+                  Flexible
+                </h1>
+                <p>
+                  Un espacio donde se combinan estiramientos profundos, movilidad articular y técnicas de relajación para mejorar tu flexibilidad y reducir tensiones.
+                </p>
+                <div class="">
+                  <a href="{% url 'about' %}">
+                    Conoce más
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+    </ol>
+    </div>
+    </section>
+    
+    </div>
+    <!-- end slider section -->
+
+<!-- Us section -->
+
+<section class="us_section layout_padding">
+  <div class="container">
+    <div class="heading_container">
+      <h2>
+        Porqué elegirnos
+      </h2>
+    </div>
+
+    <div class="us_container ">
+      <div class="row">
+        <div class="col-lg-3 col-md-6">
+          <div class="box">
+            <div class="img-box">
+              <img src="{% static 'app_proyecto/images/u-1.png' %}" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                Equipos de calidad
+              </h5>
+              <p>
+                Contamos con equipamiento de última generación para garantizar un entrenamiento efectivo y seguro
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="box">
+            <div class="img-box">
+              <img src="{% static 'app_proyecto/images/u-4.png' %}" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                Nutrición
+              </h5>
+              <p>
+                Ofrecemos asesoramiento nutricional personalizado para optimizar tus resultados deportivos
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="box">
+            <div class="img-box">
+              <img src="{% static 'app_proyecto/images/u-2.png' %}" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                Planes dietéticos
+              </h5>
+              <p>
+                Desarrollamos planes de alimentación adaptados a tus objetivos y estilo de vida
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="box">
+            <div class="img-box">
+              <img src="{% static 'app_proyecto/images/u-3.png' %}" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                Entrenamiento
+              </h5>
+              <p>
+                Entrenamiento deportivo especializado con técnicas avanzadas y seguimiento personalizado
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- end us section -->
+
+
+<!-- heathy section -->
+
+<section class="heathy_section layout_padding">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-md-12 mx-auto">
+        <div class="detail-box">
+          <h2>
+            Mente sana en cuerpo sano
+          </h2>
+          <p>
+            En nuestro gimnasio creemos firmemente en la conexión entre una mente sana y un cuerpo sano. Nuestro enfoque integral combina entrenamiento físico de alta calidad con técnicas de bienestar mental para ayudarte a alcanzar un estado óptimo de salud. Contamos con programas diseñados para todos los niveles, desde principiantes hasta atletas avanzados, y nuestro equipo de profesionales está dedicado a guiarte en cada paso de tu viaje hacia una vida más saludable y equilibrada. Únete a nuestra comunidad y descubre cómo transformar tu cuerpo y mente de manera sostenible.
+          </p>
+          <div class="btn-box">
+            <a href="{% url 'about' %}">
+              Leer más
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- end heathy section -->
+
+<!-- trainer section -->
+
+<section class="trainer_section layout_padding">
+  <div class="container">
+    <div class="heading_container">
+      <h2>
+        Trainers Oficiales
+      </h2>
+    </div>
+    <div class="row">
+      <div class="col-lg-4 col-md-6 mx-auto">
+        <div class="box">
+          <div class="name">
+            <h5>
+              Smirth Jon
+            </h5>
+          </div>
+          <div class="img-box">
+            <img src="{% static 'app_proyecto/images/t1.jpg' %}" alt="">
+          </div>
+          <div class="social_box">
+            <a href="">
+              <img src="{% static 'app_proyecto/images/facebook-logo.png' %}" alt="">
+            </a>
+            <a href="">
+              <img src="{% static 'app_proyecto/images/twitter.pn' %}" alt="">
+            </a>
+            <a href="">
+              <img src="{% static 'app_proyecto/images/instagram-logo.png' %}" alt="">
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 mx-auto">
+        <div class="box">
+          <div class="name">
+            <h5>
+              Jean Doe
+            </h5>
+          </div>
+          <div class="img-box">
+            <img src="{% static 'app_proyecto/images/t2.jpg' %}" alt="">
+          </div>
+          <div class="social_box">
+            <a href="">
+              <img src="{% static 'app_proyecto/images/facebook-logo.png' %}" alt="">
+            </a>
+            <a href="">
+              <img src="{% static 'app_proyecto/images/twitter.png' %}" alt="">
+            </a>
+            <a href="">
+              <img src="{% static 'app_proyecto/images/instagram-logo' %}" alt="">
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 mx-auto">
+        <div class="box">
+          <div class="name">
+            <h5>
+              Alex Den
+            </h5>
+          </div>
+          <div class="img-box">
+            <img src="{% static 'app_proyecto/images/t3.jpg' %}" alt="">
+          </div>
+          <div class="social_box">
+            <a href="">
+              <img src="{% static 'app_proyecto/images/facebook-logo.png' %}" alt="">
+            </a>
+            <a href="">
+              <img src="{% static 'app_proyecto/images/twitter.png' %}" alt="">
+            </a>
+            <a href="">
+              <img src="{% static 'app_proyecto/images/instagram-logo.png' %}" alt="">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- end trainer section -->
+
+<!-- contact section 
+
+<section class="contact_section ">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6 px-0">
+        <div class="img-box">
+          <img src="{% static 'app_proyecto/images/contact-img.jpg' %}" alt="">
+        </div>
+      </div>
+      <div class="col-lg-5 col-md-6">
+        <div class="form_container pr-0 pr-lg-5 mr-0 mr-lg-2">
+          <div class="heading_container">
+            <h2>
+              Contáctanos
+            </h2>
+          </div>
+          <form action="">
+            <div>
+              <input type="text" placeholder="Name" />
+            </div>
+            <div>
+              <input type="email" placeholder="Email" />
+            </div>
+            <div>
+              <input type="text" placeholder="Phone Number" />
+            </div>
+            <div>
+              <input type="text" class="message-box" placeholder="Message" />
+            </div>
+            <div class="d-flex ">
+              <button>
+                Send
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+end contact section -->
+
+
+{% endblock %}

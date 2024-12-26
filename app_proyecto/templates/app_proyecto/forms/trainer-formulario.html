@@ -1,0 +1,31 @@
+{% extends 'app_proyecto/base.html' %}
+
+{% block title %}
+La Casa del Codigo | Crear Profesor
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container my-4">
+    <div class="row justify-content-center">
+        <div class="col-4">
+            
+            <h1 class="text-center">Crear Profesor</h1>
+            <p class="text-center fw-bold fst-italic">Debes completar todos los datos.</p>
+
+        <form action="" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+          
+        <div class="d-flex justify-content-around">
+            <button type="submit" class="btn btn-primary">Crear Profesor</button>
+            <a class="btn btn-secondary" href="{% url 'trainer' %}">Volver</a>
+        </div>
+        </form>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

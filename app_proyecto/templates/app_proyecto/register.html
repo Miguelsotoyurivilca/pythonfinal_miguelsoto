@@ -1,0 +1,39 @@
+{% extends 'app_proyecto/base.html' %}
+
+{% load static %}
+
+
+{% block title %}
+La Casa del Codigo | Registro
+{% endblock %}
+
+{% block content %}
+
+
+<div class="container my-4">
+    <h1 class="text-center">Registro de usuario</h1>
+    {% if messages %}
+        <ul>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    <form method="POST">
+        {% csrf_token %}
+        
+        {{ form.as_p }}
+
+        <div class="d-flex align-items-center gap-5">
+            <button class="btn btn-primary" type="submit">Registrar</button>
+            <div class="d-flex align-items-center gap-2">
+                ¿Ya tienes una cuenta?
+                <a href="{% url 'login' %}">Iniciar Sesión</a>
+            </div>
+        </div>
+
+    </form>
+</div>
+
+
+{% endblock %}

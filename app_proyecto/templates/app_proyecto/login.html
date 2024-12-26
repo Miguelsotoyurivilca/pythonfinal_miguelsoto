@@ -1,0 +1,39 @@
+{% extends 'app_proyecto/base.html' %}
+
+{% load static %}
+
+{% block title %}
+La Casa del Codigo | Inicio Sesión
+{% endblock %}
+
+{% block content %}
+
+<h2 class="text-center mt-4">Inicio de Sesión</h2>
+    {% if messages %}
+        {% for message in messages %}
+            <div class="d-flex justify-content-center alert alert-danger w-50 m-auto mb-3" role="alert">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+
+<form class="d-flex w-25 flex-column m-auto mb-4" method="post" action="{% url 'login' %}">
+    {% csrf_token %}
+    <!-- para login 1 -->
+    <div class="form-group">
+        <label for="username">Nombre de usuario:</label>
+        <input type="text" id="username" name="username" class="form-control" placeholder="Ingrese su nombre de usuario" required>
+    </div>
+    <div class="form-group">
+        <label for="password">Contraseña:</label>
+        <input type="password" id="password" name="password" class="form-control" placeholder="Ingrese su contraseña" required>
+    </div>
+
+        <!-- para login 2 -->
+        <!-- {{ form.as_p }} -->
+
+    <button type="submit" class="btn btn-primary mt-3">Iniciar Sesión</button>
+</form>
+    
+
+{% endblock %}

@@ -1,0 +1,150 @@
+{% extends 'app_proyecto/base.html' %}
+{% load static %}
+
+{% block title %}
+La Casa del Codigo | Inicio
+{% endblock %}
+
+{% block content %}
+<!-- trainer section -->
+
+<section class="trainer_section layout_padding">
+  <div class="container">
+    <div class="heading_container">
+      <h2>
+        Trainers Oficiales
+      </h2>
+    </div>
+    <div class="row">
+      <div class="col-lg-4 col-md-6 mx-auto">
+        <div class="box">
+          <div class="name">
+            <h5>
+              Smirth Jon
+            </h5>
+          </div>
+          <div class="img-box">
+            <img src="{% static 'app_proyecto/images/t1.jpg' %}" alt="">
+          </div>
+          <div class="social_box">
+            <a href="">
+              <img src="{% static 'app_proyecto/images/facebook-logo.png' %}" alt="">
+            </a>
+            <a href="">
+              <img src="{% static 'app_proyecto/images/twitter.pn' %}" alt="">
+            </a>
+            <a href="">
+              <img src="{% static 'app_proyecto/images/instagram-logo.png' %}" alt="">
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 mx-auto">
+        <div class="box">
+          <div class="name">
+            <h5>
+              Jean Doe
+            </h5>
+          </div>
+          <div class="img-box">
+            <img src="{% static 'app_proyecto/images/t2.jpg' %}" alt="">
+          </div>
+          <div class="social_box">
+            <a href="">
+              <img src="{% static 'app_proyecto/images/facebook-logo.png' %}" alt="">
+            </a>
+            <a href="">
+              <img src="{% static 'app_proyecto/images/twitter.png' %}" alt="">
+            </a>
+            <a href="">
+              <img src="{% static 'app_proyecto/images/instagram-logo' %}" alt="">
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 mx-auto">
+        <div class="box">
+          <div class="name">
+            <h5>
+              Alex Den
+            </h5>
+          </div>
+          <div class="img-box">
+            <img src="{% static 'app_proyecto/images/t3.jpg' %}" alt="">
+          </div>
+          <div class="social_box">
+            <a href="">
+              <img src="{% static 'app_proyecto/images/facebook-logo.png' %}" alt="">
+            </a>
+            <a href="">
+              <img src="{% static 'app_proyecto/images/twitter.png' %}" alt="">
+            </a>
+            <a href="">
+              <img src="{% static 'app_proyecto/images/instagram-logo.png' %}" alt="">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end trainer section -->
+<!-- Formulario de búsqueda -->
+<h1 class="text-center mt-4"></h1>
+<p class="text-center"></p>
+<h2 class="text-center"></h2>
+
+<div class="d-flex flex-column align-items-center mb-2">
+  <form class="d-flex" action="" method="GET">
+    <input class="form-control me-4" type="text" name="q" placeholder="Buscar..." required>
+    <button class="btn btn-secondary" type="submit">Buscar</button>
+  </form>
+</div>
+
+<div class="container">
+
+    <table class="table">
+        <thead>
+          <tr class="table-danger">
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">Correo electrónico</th>
+            <th scope="col">Profesión</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for trainer in trainers %}
+          <tr class="table-success">
+              <td>{{ trainer.nombre }}</td>
+              <td>{{ trainer.apellido }}</td>
+              <td>{{ trainer.email }}</td>
+              <td>{{ trainer.profesion }}</td>
+
+          {% if user.is_superuser %}
+              <td class="d-flex justify-content-evenly">
+                  <a class="btn btn-warning" href="{% url 'trainer-eliminar' trainer.id %}">Eliminar</a>
+                  <a class="btn btn-warning" href="{% url 'trainer-editar' trainer.id %}">Editar</a>
+                  <a class="btn btn-warning" href="{% url 'trainer-detalle' trainer.id %}">Ver Profesor</a>
+              </td>
+          </tr>
+          {% else %}
+          <tr>
+              <td colspan="5">No tiene los permisos suficientes.</td>
+          </tr>
+          {% endif %}
+          {% endfor %}
+
+        </tbody>
+      </table>
+
+</div>
+
+<div class="container my-4">
+  <a class="btn btn-primary" href="{% url 'trainer-formulario' %}">Agregar Profesor</a>
+</div>
+<!-- Fin de formulario de búsqueda -->    
+    
+
+{% endblock %}
+  

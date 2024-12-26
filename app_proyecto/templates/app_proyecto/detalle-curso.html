@@ -1,0 +1,18 @@
+{% extends 'app_proyecto/base.html' %}
+
+{% block title %}
+La Casa del Codigo | {{curso.nombre}}
+{% endblock %}
+
+
+{% block content %}
+
+<div style="background-color: #d0caca;" class="d-flex flex-column m-4 p-4 align-items-center text-center rounded">
+    <div class="mb-5">
+        <h1 class="text-center">{{curso.nombre}} </h1>
+        <h2 class="fs-3">Comision: {{curso.comision}} </h2>
+    </div>
+    <p>{{curso.descripcion}}</p>
+    <a class="btn btn-primary" href="{% url 'cursos' %}">Volver</a>
+</div>
+{% endblock %}

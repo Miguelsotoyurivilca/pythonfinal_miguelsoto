@@ -1,0 +1,73 @@
+{% extends 'app_proyecto/base.html' %}
+{% load static %}
+
+{% block title %}
+La Casa del Codigo | Inicio
+{% endblock %}
+
+{% block content %}
+<!-- contact section -->
+
+<section class="contact_section ">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6 px-0">
+        <div class="img-box">
+          <img src="{% static 'app_proyecto/images/contact-img.jpg' %}" alt="">
+        </div>
+      </div>
+      <div class="col-lg-5 col-md-6">
+        <div class="form_container pr-0 pr-lg-5 mr-0 mr-lg-2">
+          <div class="heading_container">
+            <h2>
+              Cursos
+            </h2>
+          </div>
+          <div class="container">
+
+            <!-- cursos section -->
+            <table class="table">
+                <thead>
+                  <tr class="table-danger">
+                    <th scope="col">Curso</th>
+                    <th scope="col">Comisión</th>
+                    <th scope="col">Acciones</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    {% for curso in cursos %}
+                  <tr class="table-success">
+                    <td>{{curso.nombre}}</td>
+                    <td>{{curso.comision}}</td>
+                    
+                    {% if user.is_superuser %}
+                    <td class="d-flex justify-content-evenly">
+                      <a class="btn btn-danger" href="{% url 'curso-eliminar' curso.id %}">Eliminar</a>
+                      <a class="btn btn-danger" href="{% url 'curso-editar' curso.id %}">Editar</a>
+                      <a class="btn btn-danger" href="{% url 'curso-detalle' curso.id %}">Ver curso</a>
+                    </td>
+                    {% else %}
+                    <td>
+                      No tiene los permisos suficientes.
+                    </td>
+                    {% endif %}
+                    {% endfor %}
+                  </tr>
+        
+                </tbody>
+              </table>
+    <!-- end cursos section -->
+        </div>
+        <div class="container my-4">
+          <a class="btn btn-primary" href="{% url 'curso-formulario' %}">Agregar Curso</a>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- end contact section -->
+
+
+{% endblock %}

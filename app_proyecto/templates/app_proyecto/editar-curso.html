@@ -1,0 +1,29 @@
+{% extends 'app_proyecto/base.html' %}
+
+{% block title %}
+La Casa del Codigo | Editar Curso
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container my-4">
+    <div class="row justify-content-center">
+        <div class="col-4">
+            
+
+        <form action="" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+          
+        <div class="d-flex justify-content-around">
+            <button type="submit" class="btn btn-primary">Editar Curso</button>
+            <a class="btn btn-secondary" href="{% url 'cursos' %}">Volver</a>
+        </div>
+        </form>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
